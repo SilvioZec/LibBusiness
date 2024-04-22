@@ -1,0 +1,68 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>Presentation\Resources\Images\LogoBlueIco.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Persistence\Database\libBusiness.db" />
+    <None Remove="Presentation\Resources\Images\close.png" />
+    <None Remove="Presentation\Resources\Images\email.png" />
+    <None Remove="Presentation\Resources\Images\excel.png" />
+    <None Remove="Presentation\Resources\Images\HowToExcel.png" />
+    <None Remove="Presentation\Resources\Images\LogoBlack.png" />
+    <None Remove="Presentation\Resources\Images\LogoBlue.png" />
+    <None Remove="Presentation\Resources\Images\LogoWhite.png" />
+    <None Remove="Presentation\Resources\Images\minimize.png" />
+    <None Remove="Presentation\Resources\Images\pass.png" />
+    <None Remove="Presentation\Resources\Images\update.png" />
+    <None Remove="Presentation\Resources\Images\user.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Persistence\Database\libBusiness.db">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Presentation\Resources\Images\LogoBlueIco.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EPPlus" Version="7.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite.Core" Version="8.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="System.Linq.Dynamic" Version="1.0.8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Presentation\Resources\Images\close.png" />
+    <Resource Include="Presentation\Resources\Images\email.png" />
+    <Resource Include="Presentation\Resources\Images\excel.png" />
+    <Resource Include="Presentation\Resources\Images\HowToExcel.png" />
+    <Resource Include="Presentation\Resources\Images\LogoBlack.png" />
+    <Resource Include="Presentation\Resources\Images\LogoBlue.png" />
+    <Resource Include="Presentation\Resources\Images\LogoWhite.png" />
+    <Resource Include="Presentation\Resources\Images\minimize.png" />
+    <Resource Include="Presentation\Resources\Images\pass.png" />
+    <Resource Include="Presentation\Resources\Images\update.png" />
+    <Resource Include="Presentation\Resources\Images\user.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Themes\" />
+  </ItemGroup>
+
+</Project>

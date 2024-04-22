@@ -1,0 +1,21 @@
+﻿<Page x:Class="LibBusiness.Presentation.Views.Homepage_pages.Home"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LibBusiness.Presentation.Views.Homepage_pages"
+      mc:Ignorable="d"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Home">
+
+    <Grid>
+        <Border CornerRadius="0 0 10 0" Style="{StaticResource borderPage}"/>
+        <Image Source="../../Resources/Images/LogoBlack.png" VerticalAlignment="Top" HorizontalAlignment="Center" Width="300" Margin="40"/>
+        <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="30 0 30 0">
+            <TextBlock Style="{StaticResource titleTxt}" Text="LibBusiness: Projeto em WPF" Foreground="#3f3f3f"/>
+            <TextBlock Style="{StaticResource normalTxt}" Foreground="#3f3f3f" Text="Projeto em C# WPF realizado em 25h com objetivo de aprender a estrutura, ferramentas, configurações e controles dos projetos em WPF."/>
+        </StackPanel>
+        <TextBlock Style="{StaticResource normalTxt}" Foreground="#3f3f3f" Text="Realizado por: Silvio Zechin" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="20"/>
+        
+    </Grid>
+</Page>

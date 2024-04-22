@@ -1,0 +1,38 @@
+﻿<Page x:Class="LibBusiness.Presentation.Views.Homepage_pages.Emprestimos"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LibBusiness.Presentation.Views.Homepage_pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Emprestimos">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Border CornerRadius="10 0 10 0" Style="{StaticResource borderPage}" Grid.ColumnSpan="3" Grid.RowSpan="5"/>
+        <TextBlock Text="Seus emprestimos em aberto:" Grid.ColumnSpan="3" VerticalAlignment="Top" Style="{StaticResource titleTxt}" Margin="10 10 10 10" Foreground="#3f3f3f"/>
+        <TextBlock x:Name="txtEmprestimos" Grid.Row="4" Text="Existem emprestimos em atraso :(" Style="{StaticResource titleTxt}" Grid.ColumnSpan="2" VerticalAlignment="Bottom" FontSize="25" Margin="90 10 10 10" Foreground="#c93434"/>
+        <DataGrid x:Name="dtgEmprestimos" Grid.Row="1" Grid.RowSpan="4" Grid.ColumnSpan="2" Margin="90 0 0 50" ItemsSource="{Binding ListaDeEmprestimos}" IsReadOnly="True"/>
+        <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="2" Grid.RowSpan="4" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button x:Name="btnDevolver" Content="Fazer devolução" Style="{StaticResource mainBtn}"  Margin="20" Click="btnDevolver_Click"/>
+            <Button x:Name="btnHistorico" Content="Histórico de emprestimos" Style="{StaticResource mainBtn}"  Margin="20" Click="btnHistorico_Click"/>
+            <Button x:Name="btnAddEmprestimo" Content="Novo Emprestimo" Style="{StaticResource mainBtn}"  Margin="20" Click="btnAddEmprestimo_Click"/>
+            <Button x:Name="btnDeleteEmprestimo" Content="Eliminar Emprestimo" Style="{StaticResource mainBtn}"  Margin="20" Click="btnDeleteEmprestimo_Click"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Center">
+            
+        </StackPanel>
+    </Grid>
+</Page>

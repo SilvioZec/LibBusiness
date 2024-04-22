@@ -1,0 +1,59 @@
+﻿<Window x:Class="LibBusiness.Presentation.Resources.CustomControls.AdicionarEmrpestimoModal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LibBusiness.Presentation.Resources.CustomControls"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True" Background="Transparent"
+        Title="AdicionarEmrpestimoModal" Height="450" Width="800" MouseLeftButtonDown="Window_MouseLeftButtonDown">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+            <RowDefinition Height="70"/>
+        </Grid.RowDefinitions>
+        <Border Style="{StaticResource borderPage}" CornerRadius="10" Grid.ColumnSpan="4" Grid.RowSpan="4" BorderThickness="2" BorderBrush="#3f3f3f"/>
+        <StackPanel Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Selecione a data de emprestimo: " Style="{StaticResource normalTxt}" Foreground="#3f3f3f"/>
+            <DatePicker x:Name="dateEmprestimo" Grid.Row="0" Height="30" Width="300"/>
+        </StackPanel>
+        <StackPanel Grid.Column="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Selecione a data de emprestimo: " Style="{StaticResource normalTxt}" Foreground="#3f3f3f"/>
+            <DatePicker x:Name="dateDevolucao" Height="30" Width="300"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center">
+            <ComboBox x:Name="cbxSearchLivro" SelectionChanged="cbxSearchLivro_SelectionChanged" SelectedIndex="0">
+                <ComboBoxItem Content="ISBN"/>
+                <ComboBoxItem Content="Titulo"/>
+                <ComboBoxItem Content="Autor"/>
+                <ComboBoxItem Content="Categoria"/>
+            </ComboBox>
+            <TextBox x:Name="txtSearchLivro" TextChanged="txtSearchLivro_TextChanged" BorderBrush="#3f3f3f" BorderThickness="1" Width="200"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" Grid.Column="2">
+            <ComboBox x:Name="cbxSearchLeitor" SelectionChanged="cbxSearchLeitor_SelectionChanged" SelectedIndex="0">
+                <ComboBoxItem Content="Nome"/>
+                <ComboBoxItem Content="Id"/>
+            </ComboBox>
+            <TextBox x:Name="txtSearchLeitor" TextChanged="txtSearchLeitor_TextChanged" BorderBrush="#3f3f3f" BorderThickness="1" Width="200"/>
+        </StackPanel>
+        <DataGrid x:Name="dtgLivro" Grid.Row="2" Grid.ColumnSpan="2" Margin="20" SelectionMode="Single" HeadersVisibility="Column">
+
+        </DataGrid>
+        <DataGrid x:Name="dtgLeitor" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" Margin="20" SelectionMode="Single" HeadersVisibility="Column">
+
+        </DataGrid>
+        <StackPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button x:Name="btnCancel" Style="{StaticResource mainBtn}" Content="Cancelar" Margin="0 0 10 20" Width="100" Click="btnCancel_Click"/>
+            <Button x:Name="btnAdd" Style="{StaticResource mainBtn}" Content="Adicionar" Margin="10 0 90 20" Width="100" Click="btnAdd_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

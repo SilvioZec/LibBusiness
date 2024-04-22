@@ -1,0 +1,43 @@
+﻿<Page x:Class="LibBusiness.Presentation.Views.Homepage_pages.Livros"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LibBusiness.Presentation.Views.Homepage_pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Livros">
+    <Page.Resources>
+        <Style x:Key="ImgBtn" TargetType="Image">
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Cursor" Value="Hand"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Page.Resources>
+    <Grid>
+        <Border CornerRadius="10 0 10 0" Style="{StaticResource borderPage}"/>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition/>
+                <RowDefinition Height="60"/>
+            </Grid.RowDefinitions>
+            <Image x:Name="btnAtualizar" Source="..\..\Resources\Images\update.png" Height="30" VerticalAlignment="Bottom" Panel.ZIndex="2" HorizontalAlignment="Left" Margin="60 0 0 0" MouseLeftButtonDown="btnAtualizar_MouseLeftButtonDown" ToolTip="Atualizar" Style="{StaticResource ImgBtn}"/>
+            <ComboBox x:Name="cbxSearch" Grid.Column="0" Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Right" Height="30" ItemsSource="{Binding ItemsList}" SelectionChanged="cbxSearch_SelectionChanged"/>
+            <TextBox x:Name="txtSearch" Grid.Column="1" Grid.Row="0" VerticalAlignment="Bottom" Height="30" TextChanged="txtSearch_TextChanged" BorderBrush="#3f3f3f" BorderThickness="1"/>
+            <Image x:Name="imgExcel" Source="..\..\Resources\Images\excel.png" Grid.Column="2" Height="40" Width="40" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0 0 60 0" MouseLeftButtonDown="imgExcel_MouseLeftButtonDown" ToolTip="Importar ficheiro Excel" Style="{StaticResource ImgBtn}"/>
+            <DataGrid x:Name="dtgLivros" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" Margin="60 20 60 20" CanUserAddRows="False"  HeadersVisibility="Column"/>
+            <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Button x:Name="btnAddLivro" Content="Adicionar Livro" Style="{StaticResource mainBtn}" Margin="0 0 10 10" Click="btnAddLivro_Click"/>
+                <Button x:Name="btnRemoveLivro" Content="Remover Livro" Style="{StaticResource mainBtn}" Margin="0 0 10 10" Click="btnRemoveLivro_Click"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>
